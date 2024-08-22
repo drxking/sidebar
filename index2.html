@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            perspective-origin: center;
+            perspective: 1000px;
+        }
+
+        h1 {
+            font-size: 150px;
+            font-family: sans-serif;
+            text-transform: uppercase;
+            animation: 0.7s anim ease-in-out;
+            transform-origin: top;
+        }
+
+        @keyframes anim {
+            0% {
+                /* transform: rotateX(-80deg) translateY(100%) ; */
+            transform: rotateX(-40deg) translateY(50%) ;
+                opacity: 0;
+            }
+            50%{
+
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h1>LocoMotive</h1>
+</body>
+
+</html>

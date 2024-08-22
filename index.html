@@ -4,144 +4,114 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sudip Acharya</title>
-    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" />
+    <title>Animation</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-        body {
-            position: relative;
-            overflow-x: hidden;
+        @font-face {
+            font-family: product;
+            src: url(./SFPRODISPLAYREGULAR.OTF);
+        }
+        html{
+            scroll-behavior: smooth;
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'poppins';
+        span {
+            display: inline-block;
         }
-
-        nav {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 20px 40px;
+        .hero h1{
+            text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
         }
-
-        .right ul {
-            display: flex;
-            list-style: none;
-            gap: 40px;
-        }
-
-        a {
-            text-decoration: none;
-            color: black;
-        }
-
-        li:hover a {
-            color: red;
-        }
-
-        .right {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .ri-menu-line {
-            font-size: 23px;
-            cursor: pointer;
-            font-weight: 700;
-            display: none;
-        }
-
-        .side {
-            height: 100vh;
-            width: 100vw;
-            position: absolute;
-            background-color: black;
-            color: #fff;
-            top: 0;
-            right: -100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: 0.5s;
-        }
-
-        .side ul {
-            display: flex;
-            align-items: center;
-            flex-direction: column;
-            list-style: none;
-            gap: 2vw;
-        }
-
-        .side ul li {
-            font-size: 30px;
-            font-weight: 600;
-            cursor: pointer;
-        }
-
-        .ri-close-line {
-            font-size: 30px;
-            font-weight: 700;
-            cursor: pointer;
-            position: absolute;
-            top: 20px;
-            right: 40px;
-        }
-
-        @media (max-width:550px) {
-            .right ul {
-                display: none;
-            }
-
-            .ri-menu-line {
-                display: flex;
-            }
+        .hero p{
+            text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
         }
     </style>
 </head>
 
 <body>
-    <div class="side">
-        <ul>
-            <li>Home</li>
-            <li>Contact</li>
-            <li>Services</li>
-            <li>About</li>
-        </ul>
-        <i onclick="closes()" class="ri-close-line"></i>
-    </div>
 
-    <nav>
-        <h3><a href="index.html">Logo.</a></h3>
-        <div class="right">
-            <ul>
-                <li><a href="">Home</a></li>
-                <li><a href="">Contact</a></li>
-                <li><a href="">Services</a></li>
-                <li><a href="">About</a></li>
-            </ul>
-            <i onclick="opens()" class="ri-menu-line"></i>
+    <main class="overflow-hidden text-white">
+        <div
+            class="section h-screen w-screen bg-[url('https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/72dd1b93604563.5e68fc45c21df.png')] md:bg-[url('https://media.gq.com/photos/661fd9db1077287a12a6a909/master/pass/air-jordan-1-banned.jpg')] flex flex-col bg-cover bg-center">
+            <div class="over h-full w-full md:bg-black/25 absolute"></div>
+            <nav class="px-20 py-6 flex justify-between items-center z-10 md:flex-row flex-col">
+                <h1 class="text-xl font-bold uppercase">Nike</h1>
+                <ul class="flex items-center lg:gap-8 gap-4 text-sm font-[Poppins]">
+                    <li>Home</li>
+                    <li>Contact</li>
+                    <li>Services</li>
+                    <li>AboutUs</li>
+                    <a href="#main"><li>Catalog</li></a>
+                </ul>
+            </nav>
+            <div class="hero md:p-20 p-4 flex flex-col md:items-center items-start justify-center w-full z-10 md:static absolute bottom-20">
+                <h1 class="font-bold md:text-[70px] lg:text-[100px] text-[42px] uppercase tracking-tighter w-fit md:mt-16 leading-tight ">Nike Air Jordan
+                </h1>
+                <p class="w-full  md:w-2/3 lg:w-1/2 md:text-center md:text-xs text-[10px]  leading-tight font-[Poppins]">Nike Air Jordan sneakers combine cutting-edge design
+                    and performance, embodying a legendary basketball legacy. Favored by athletes and collectors, they
+                    symbolize style, innovation, and athletic excellence.</p>
+                <a href="#main">
+                    <button class="md:mt-10 mt-5 group bg-white text-black font-[Poppins] font-semibold text-sm px-5  py-2 flex items-center justify-center gap-1">
+                        View Catalog<i class="group-hover:rotate-45 duration-300 text-xl ri-arrow-right-down-line leading-none font-normal"></i>
+                    </button>
+                </a>
+            </div>
         </div>
-    </nav>
+        <div id="main" class="main sm:h-screen h-[40vh] w-screen md:bg-[#B01A19] bg-[#441F40] relative  overflow-hidden flex items-center">
+            <div class="wrapper h-full  w-full absolute z-10 top-0 left-0 ">
+                <div
+                    class="top md:bg-[#B01A19] bg-[#441F40] md:w-[120%]  w-[200%] left-1/2 -translate-x-1/2 top-0 -translate-y-1/2 sm:h-[27vh] h-[15vh] absolute rounded-[50%] flex flex-col p-5 items-center justify-end">
+                    <h1 class="text-lg font-semibold font-[Poppins] uppercase">Our Catalog</h1>
+                </div>
+                <div
+                    class="bottom md:bg-[#B01A19] bg-[#441F40] md:w-[120%] w-[200%] left-1/2 -translate-x-1/2 bottom-0 translate-y-1/2 sm:h-[27vh] h-[15vh] absolute rounded-[50%]  md:p-6 p-3 bottom-0 flex items-start gap-4 justify-center">
+                    <div
+                        class="left-btn  text-2xl border border-gray-300/50 text-gray-300 h-fit flex hover:bg-gray-500/25 cursor-pointer item-center justify-center rounded-full p-2">
+                        <i class="leading-none ri-arrow-left-line"></i>
+                    </div>
+                    <div
+                        class="right-btn text-2xl border border-gray-300/50 text-gray-300 h-fit flex hover:bg-gray-500/25 cursor-pointer item-center justify-center rounded-full p-2">
+                        <i class="leading-none ri-arrow-right-line"></i>
+                    </div>
+                </div>
+            </div>
+            <div
+                class="texts absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-full flex flex-col items-center justify-center z-50 font-[product] ">
+                <div class="h1-wrapper overflow-hidden">
+                    <h1 class="main-text md:text-[70px] text-[30px] text-white uppercase font-bold tracking-snug temp cursor-pointer"></h1>
+                </div>
+            </div>
+            <div class="slide h-full  flex items-center w-fit justify-center pl-[4.5vw]">
+                <div class="slime w-[90vw] h-full ">
+                    <img src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/72dd1b93604563.5e68fc45c21df.png"
+                        class="h-full brightness-75 md:scale-[0.9] scale-[0.95] w-full object-cover">
+                </div>
+                <div class="slime w-[90vw] h-full ">
+                    <img src="https://media.gq.com/photos/661fd9db1077287a12a6a909/master/pass/air-jordan-1-banned.jpg"
+                        class="h-full brightness-75 md:scale-[0.9] scale-[0.95] w-full object-cover">
+                </div>
+                <div class="slime w-[90vw] h-full ">
+                    <img src="https://robbreport.com/wp-content/uploads/2021/06/gucci01.jpg?w=1000"
+                        class="h-full brightness-75 md:scale-[0.9] scale-[0.95] w-full object-cover">
+                </div>
+                <div class="slime w-[90vw] h-full ">
+                    <img src="https://glanz-photography.com/wp-content/uploads/2017/12/Adidas-Shoe-Red.jpg"
+                        class="h-full brightness-75 md:scale-[0.9] scale-[0.95] w-full object-cover">
+                </div>
 
+            </div>
+        </div>
+        <div class="h-screen w-full bg-red-700"></div>
+    </main>
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+        integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="script.js"></script>
 </body>
-
-<script>
-    let side = document.querySelector(".side")
-
-    function opens() {
-        side.style.right = `0`
-    }
-
-    function closes() {
-        side.style.right = `-100%`
-    }
-
-</script>
 
 </html>
